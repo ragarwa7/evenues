@@ -1,0 +1,21 @@
+[
+       {
+           "testimonialDesc": "Amazing theme, amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId":"client1.png"      
+
+          },
+           {"testimonialDesc": "Amazing theme, amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId":"client2.png"      
+
+          },
+           {"testimonialDesc": "Amazing theme, amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId":"client2.png"      
+
+          }
+    ]

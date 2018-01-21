@@ -1,0 +1,47 @@
+
+
+    [
+       {
+           "testimonialDesc": "Amazing , amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId": "client1",
+           "vendorId": 1001
+       },
+       {
+           "testimonialDesc": "Amazing , amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId": "client4",
+           "vendorId": 1004
+       },
+       {
+           "testimonialDesc": "Amazing , amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId": "client8",
+           "vendorId": 1008
+       },
+       {
+           "testimonialDesc": "Amazing , amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId": "client6",
+           "vendorId": 1006
+       },
+       {
+           "testimonialDesc": "Amazing , amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId": "client5",
+           "vendorId": 1005
+       },
+       {
+           "testimonialDesc": "Amazing , amazing code and especially amazing support! I Really love your work.",
+           "vendorName": "John Smith",
+           "vendorDesignation": "M.D. Addah O.Hotel",
+           "imageId": "client7",
+           "vendorId": 1007
+       }
+    ]
+
