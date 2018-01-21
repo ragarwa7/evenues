@@ -1,2 +1,2 @@
 # evenues
-Application to find venues for corporate events.
+An angularJS application to find venues for corporate events.
