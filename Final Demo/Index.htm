@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/core.css">
+    <script type="text/javascript" src="js/JQuery/jquery-2.1.3.min.js">
+    </script>
+    <link rel="stylesheet" href="css/carousel.css"  type="text/css" />
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="js/angular/angular.min.js">
+    </script>
+    <script type="text/javascript" src="js/angular/angular-animate.min.js">
+    </script>
+    <script type="text/javascript" src="js/angular/angular-touch.min.js">
+    </script>
+    <script type="text/javascript" src="js/angular/angular-dropdowns.js">
+    </script>
+    <script type="text/javascript" src="js/MainCtrl.js">
+    </script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/angular-dropdowns.css">
+    <script src="js/Controller/app.js">
+    </script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!--Main Outer Div-->
+    <div class="content-wrapper">
+        <!--Header-->
+        <header>
+        <div class="row">
+          <div id="header" class="col-sm-12 header">
+            <div class="row">
+              <div id="logo_container" class="logo">
+              </div>
+              <div id="location_container" class="col-sm-5" ng-controller="LocationCtrl">
+                <div style="margin:0 auto; text-align:center;">           
+                  <div dropdown-select="ddSelectOptions" dropdown-model="ddSelectSelected">
+                  </div>                  
+                </div>
+              </div>
+              <div id="enquiry_button" class="col-sm-3 enquiry-button">
+                <a class="white-anchor" href="#" target="_blank">
+                  Send Enquiry
+                </a>
+              </div>
+              <div id="contact_button" class="col-sm-2 contact-button">
+                <a class="white-anchor" href="#" target="_blank">
+                  Contact Us
+                </a>
+              </div>
+              <div class="dropdown col-sm-1 login-img">
+                <img src="#" class="dropdown-toggle" data-toggle="dropdown">
+              </img>
+              <ul class="dropdown-menu">
+                <li id="register" data-toggle="modal" data-target="#register_Form">
+                  <a href="#">
+                    Register
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    SignIn
+                  </a>
+                </li>   
+              </ul>             
+            </div>
+                            <!-- Modal Register-->
+                <div class="modal fade" id="register_Form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times; </span>
+                                </button>
+                                <h4 class="modal-title" id="register-box">
+                                    Modal title
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Close
+                                </button>
+                                <button type="button" class="btn btn-primary">
+                                    Save changes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>           
+          </div>
+        </div>
+      </div>
+        </header>
+        <!--Includes middle and bottom panel-->
+        <div class="container">
+            <div class="row">
+                <div id="picture_main_container" class="col-sm-12" ng-controller="CarouselCtrl">
+                    <!-- slider container -->
+                    <div class="container slider">
+                        <!-- enumerate all photos -->
+                        <img ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()"
+                            ng-show="isActive($index)" ng-src="{{photo.src}}" />
+                        <!-- prev / next controls -->
+                        <a class="arrow prev" href="#" ng-click="showPrev()"></a><a class="arrow next" href="#"
+                            ng-click="showNext()"></a>
+                        <!-- extra navigation controls -->
+                        <ul class="nav">
+                            <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
+                                <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="middle_section" class="middle-section row">
+                    <div id="left_column" class="col-sm-4 left-column">
+                        <div id="accordion_container" class="accordion">
+                            <div id="MainMenu">
+                                <div class="list-group panel">
+                                    <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse"
+                                        data-parent="#MainMenu" ng-model="check">Party Type </a>
+                                    <div class="collapse" id="demo3">
+                                        <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">
+                                            Private Party <i class="fa fa-caret-down"></i></a>
+                                        <div class="collapse list-group-submenu" id="SubMenu1">
+                                            <a href="#" class="list-group-item" data-parent="#SubMenu1">BBQ </a><a href="#" class="list-group-item"
+                                                data-parent="#SubMenu1">Happy Hours </a><a href="#SubSubMenu1" class="list-group-item"
+                                                    data-toggle="collapse" data-parent="#SubSubMenu1">Family Gathering <i class="fa fa-caret-down">
+                                                    </i></a>
+                                            <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
+                                                <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 1 </a>
+                                                <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 2 </a>
+                                            </div>
+                                            <a href="#" class="list-group-item" data-parent="#SubMenu1">Dinner Party </a>
+                                        </div>
+                                        <a href="javascript:;" class="list-group-item">Corporate Events </a><a href="javascript:;"
+                                            class="list-group-item">Subitem 3 </a>
+                                    </div>
+                                    <a href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse"
+                                        data-parent="#MainMenu">Location </a>
+                                    <div class="collapse" id="demo4">
+                                        <a href="" class="list-group-item">Magarpatta </a><a href="" class="list-group-item">
+                                            Aundh </a><a href="" class="list-group-item">VimanNagar </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="create_event_button" class="create-event">
+                            Create Event
+                        </div>
+                        <div id="custom_parties_button" class="custom-parties">
+                            Custom Parties
+                        </div>
+                    </div>
+                    <div id="right_column" class="col-sm-8 right-column">
+                        <div class="row">
+                            <div id="sort_container" class=sort-container">
+                                <div class="col-sm-9">
+                                    <ul class="sort-links-big">
+                                        <li class="sort-link"><a class="white-anchor" href="#" data-toggle="modal" data-target="#aboutUs_modal">
+                                            Price </a></li>
+                                        <li class="sort-link"><a class="white-anchor" href="#">Capacity </a></li>
+                                        <li class="sort-link"><a class="white-anchor" href="#">Ratings </a></li>
+                                    </ul>
+                                    <!-- end sorter-link-big -->
+                                    <div class="clear">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="venue_grid_container" ng-controller="GridCtrl">
+                            <div ng-repeat="row in rows">
+                                <div class="row">
+                                    <div ng-class="{'col-xs-4': columns == 3, 'col-xs-3': columns == 4}" ng-repeat="venue in row">
+                                        <div class="grid" style="background-image: url({{venue.src}})">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    {{venue.desc}}
+                                                    <h3 class="panel-title">
+                                                {{venue.price}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottom_section" class=" col-sm-8 bottom-section">
+                    <div id="review_button" class="review-button">
+                        Review
+                    </div>
+                    <div id="add_venue_button" class="add-venue">
+                        Add Venue
+                    </div>
+                    <div id="recent_events_button" class="recent-events">
+                        Recent Events
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        <footer>          
+        <div class="col-sm-9">
+
+                    <ul class="footer-links-big">
+                        <li class="footer-link">
+                            <a class="white-anchor" href="#aboutUs_modal" data-toggle="modal">
+                                About
+                            </a>
+                        </li>
+            <!-- Modal  About Us-->
+                <div class="modal fade" id="aboutUs_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-custom-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times; </span>
+                                </button>
+                                <h4 class="modal-title" id="aboutUs">
+                                    About Us
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <img class="modal-image" src="http://farm9.staticflickr.com/8179/7918424842_c79f7e345c_b.jpg" />
+                                </div>
+                                <div class="row">
+                                    <div class="aboutUs-body">
+                                        About Us body Here
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <img src="images/todd.jpg" alt="Rachit Agarwal" class="aboutUs-profile-img">
+                                    <h1 class="aboutUs-profile-name">
+                                        Rachit Agarwal
+                                    </h1>
+                                    <br />
+                                    <span class="aboutUs-profile">Text Here.... </span>
+                                </div>
+                                <div class="row">
+                                    <img src="images/todd.jpg" alt="Arpit Khanna" class="aboutUs-profile-img">
+                                    <h1 class="aboutUs-profile-name">
+                                        Arpit Khanna
+                                    </h1>
+                                    <br />
+                                    <span class="aboutUs-profile">Text Here.... </span>
+                                </div>
+                                <div class="row">
+                                    <img src="images/todd.jpg" alt="Shashank Tripathi" class="aboutUs-profile-img">
+                                    <h1 class="aboutUs-profile-name">
+                                        Shashank Tripathi
+                                    </h1>
+                                    <span class="aboutUs-profile">Text Here.... </span>
+                                </div>
+                                <div class="row">
+                                    <img src="images/todd.jpg" alt="Himani Singh" class="aboutUs-profile-img">
+                                    <h1 class="aboutUs-profile-name">
+                                        Himani Singh
+                                    </h1>
+                                    <span class="aboutUs-profile">Text Here.... </span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        <li class="footer-link">
+                            <a class="white-anchor" href="#">
+                                Privacy
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a class="white-anchor" href="#">
+                                Terms
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a class="white-anchor" href="#">
+                                Policies
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a class="white-anchor" href="#">
+                                Advertise
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a class="white-anchor" href="#contactUs_modal" data-toggle="modal">
+                                Contact
+                            </a>
+                        </li>
+                        
+              <!-- Modal Contact Us-->
+                <div class="modal fade" id="contactUs_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-custom-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times; </span>
+                                </button>
+                                <h4 class="modal-title" id="contactUs">
+                                    Contact Us
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <img class="modal-image" src="http://farm9.staticflickr.com/8449/7918424278_4835c85e7a_b.jpg" />
+                                </div>
+                                <div class="row">
+                                    <div class="contactUs-body">
+                                        Contact Us body Here
+                                    </div>
+                                    <input name="name" class="contact-box" id="name" type="text" placeholder="Name*"
+                                        autofocus="" value="" />
+                                    <br />
+                                    <input name="email" class="contact-box" id="email" type="email" placeholder="Email*"
+                                        value="" />
+                                    <br />
+                                    <input name="phone" class="contact-box" id="phone" type="text" placeholder="Phone number (optional)"
+                                        value="" />
+                                    <br />
+                                    <textarea name="message" class="contact-box" id="message" rows="8" cols="1" type="text"
+                                        placeholder="Message*" value=""></textarea>
+                                    <br />
+                                    <h3 class="contactUs-heading">
+                                        For Business Queries ,please call our office
+                                    </h3>
+                                    <div class="contactUs-body">
+                                        Details here....
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">
+                                    Submit
+                                </button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </ul>
+                    <!-- end footer-link-big -->
+
+                    <div class="clear"></div>
+
+
+                </div>
+        </footer>
+    </div>
+</body>
+</html>
