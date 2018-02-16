@@ -12,4 +12,4 @@ Evenue is a angularjs application use to explore and book the venues for corpora
 ## Screenshots
 
 ## Contributors
-[Rachit Agarwal](https://github.com/ragarwa7) and [Himani singh](https://github.com/hiSingh248).
+[Rachit Agarwal](https://github.com/ragarwa7) and [Himani Singh](https://github.com/hiSingh248).
